@@ -3,15 +3,21 @@
   "id": "collartrinkets",
   "version": "${version}",
   "name": "Collar Trinkets",
-  "description": "",
+  "description": "colored collar trinkets for players!!",
   "authors": [
-    "igalaxy"
+    {
+      "name": "igalaxy",
+      "contact": {
+        "homepage": "https://wii.mom"
+      }
+    }
   ],
   "contact": {
-    "repo": "https://github.com/wiidotmom/collar-trinkets"
+    "sources": "https://github.com/wiidotmom/collar-trinkets",
+    "issues": "https://github.com/wiidotmom/collar-trinkets/issues"
   },
-  "license": "MIT",
-  "icon": "assets/collar-trinkets/icon.png",
+  "license": "0BSD",
+  "icon": "assets/collartrinkets/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

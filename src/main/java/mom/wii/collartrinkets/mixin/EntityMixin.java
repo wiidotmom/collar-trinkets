@@ -21,7 +21,7 @@ public abstract class EntityMixin {
     private void collartrinkets$playStepSound(BlockPos pos, BlockState state, CallbackInfo ci) {
         if ((Entity) (Object) this instanceof LivingEntity && !this.getWorld().isClient) {
             LivingEntity entity = (LivingEntity) (Object) this;
-            if (entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
+            if (entity.accessoriesCapability() != null && entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
                 entity.getWorld().playSound(null, entity.getX(), entity.getY(), entity.getZ(), CollarTrinketsSounds.COLLAR_BELL, entity.getSoundCategory(), 1f, 1f);
             }
         }
@@ -31,7 +31,7 @@ public abstract class EntityMixin {
     private void collartrinkets$setSneaking(boolean sneaking, CallbackInfo ci) {
         if ((Entity) (Object) this instanceof LivingEntity && !this.getWorld().isClient) {
             LivingEntity entity = (LivingEntity) (Object) this;
-            if (entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
+            if (entity.accessoriesCapability() != null && entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
                 entity.getWorld().playSound(null, entity.getX(), entity.getY(), entity.getZ(), CollarTrinketsSounds.COLLAR_BELL, entity.getSoundCategory(), 1f, 1f);
             }
         }

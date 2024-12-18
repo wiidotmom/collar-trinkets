@@ -11,5 +11,7 @@ colored collar trinkets for players!!
 
 ## works well with
 - https://modrinth.com/mod/ears
-- https://modrinth.com/mod/styled-chat / https://modrinth.com/mod/styled-nicknames / https://modrinth.com/mod/styledplayerlist
+- https://modrinth.com/mod/styled-chat
+- https://modrinth.com/mod/styled-nicknames
+- https://modrinth.com/mod/styledplayerlist
 - https://modrinth.com/mod/origins

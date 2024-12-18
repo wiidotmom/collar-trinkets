@@ -37,6 +37,9 @@ public class CollarTrinkets implements ModInitializer {
                 return PlaceholderResult.invalid("Not a living entity!");
             }
             LivingEntity entity = (LivingEntity) ctx.entity();
+            if (entity.accessoriesCapability() == null) {
+                return PlaceholderResult.invalid("No AccessoriesCapability!");
+            }
             SlotEntryReference collar = entity.accessoriesCapability().getFirstEquipped(this::isCollar);
             if (collar.stack().hasCustomName()) {
                 return PlaceholderResult.value(collar.stack().getName());

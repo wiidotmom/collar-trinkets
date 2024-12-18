@@ -14,7 +14,7 @@ public class LivingEntityMixin {
     private void collartrinkets$jump(CallbackInfo ci) {
         LivingEntity entity = (LivingEntity) (Object) this;
         if (!entity.getWorld().isClient()) {
-            if (entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
+            if (entity.accessoriesCapability() != null && entity.accessoriesCapability().isEquipped(CollarTrinketsItems.COLLAR_WITH_BELL)) {
                 entity.getWorld().playSound(null, entity.getX(), entity.getY(), entity.getZ(), CollarTrinketsSounds.COLLAR_BELL, entity.getSoundCategory(), 1f, 1f);
             }
         }

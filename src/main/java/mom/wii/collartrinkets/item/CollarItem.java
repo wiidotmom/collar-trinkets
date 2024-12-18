@@ -34,6 +34,8 @@ public class CollarItem extends AccessoryItem implements DyeableItem {
         this.hasBell = hasBell;
     }
 
+
+
     @Environment(EnvType.CLIENT)
     public static class Model extends BipedEntityModel<LivingEntity> {
         public Model(ModelPart root) {
