@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 public class CollarTrinketsItems {
     public static void initialize() {}
 
-    public static final Item COLLAR = register(
+    public static final CollarItem COLLAR = (CollarItem) register(
             new CollarItem(new FabricItemSettings().maxCount(1)),
             "collar"
     );

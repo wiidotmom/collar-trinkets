@@ -5,6 +5,7 @@ import io.wispforest.accessories.api.AccessoryItem;
 import io.wispforest.accessories.api.client.AccessoryRenderer;
 import io.wispforest.accessories.api.slot.SlotReference;
 import mom.wii.collartrinkets.CollarTrinkets;
+import mom.wii.collartrinkets.CollarTrinketsItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -17,22 +18,25 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class CollarItem extends AccessoryItem {
+public class CollarItem extends AccessoryItem implements DyeableItem {
+
     public CollarItem(Settings settings) {
         super(settings);
     }
@@ -52,13 +56,6 @@ public class CollarItem extends AccessoryItem {
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
         setOwner(stack, player.getEntityName());
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (hasOwner(stack)) {
-            tooltip.add(Text.translatable("collartrinkets.tooltip.owned_by", getOwner(stack)).formatted(Formatting.GRAY));
-        }
     }
 
     @Environment(EnvType.CLIENT)
@@ -99,7 +96,11 @@ public class CollarItem extends AccessoryItem {
             model.animateModel(slotReference.entity(), limbSwing, limbSwingAmount, ageInTicks);
             followBodyRotations(slotReference.entity(), model);
             VertexConsumer consumer = vertexConsumerProvider.getBuffer(model.getLayer(TEXTURE));
-            model.render(matrixStack, consumer, light, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+            int i = CollarTrinketsItems.COLLAR.getColor(itemStack);
+            float f = (float)(i >> 16 & 255) / 255.0F;
+            float g = (float)(i >> 8 & 255) / 255.0F;
+            float h = (float)(i & 255) / 255.0F;
+            model.render(matrixStack, consumer, light, OverlayTexture.DEFAULT_UV, f, g, h, 1.0F);
         }
 
         private static void followBodyRotations(LivingEntity entity, BipedEntityModel<LivingEntity> model) {
