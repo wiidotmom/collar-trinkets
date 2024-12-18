@@ -1,0 +1,6 @@
+{
+  "collar_bell": {
+    "subtitle": "sound.collartrinkets.collar_bell",
+    "sounds": ["collartrinkets:collar_bell"]
+  }
+}

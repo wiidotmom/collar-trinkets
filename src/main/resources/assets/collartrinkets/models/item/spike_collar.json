@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "collartrinkets:item/collar",
+    "layer1": "collartrinkets:item/collar_spikes"
+  }
+}

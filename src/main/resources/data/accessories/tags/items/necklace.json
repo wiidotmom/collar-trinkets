@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "collartrinkets:collar"
+    "collartrinkets:collar",
+    "collartrinkets:bell_collar"
   ]
 }

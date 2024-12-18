@@ -3,15 +3,19 @@
   "category": "equipment",
   "pattern": [
     "LL",
-    "LL"
+    "LL",
+    " B"
   ],
   "key": {
     "L": {
       "item": "minecraft:leather"
+    },
+    "B": {
+      "item": "minecraft:bell"
     }
   },
   "result": {
-    "item": "collartrinkets:collar",
+    "item": "collartrinkets:bell_collar",
     "count": 1
   }
 }

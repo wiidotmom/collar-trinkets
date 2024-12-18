@@ -1,3 +1,5 @@
 {
-  "item.collartrinkets.collar": "Collar"
+  "item.collartrinkets.collar": "Leather Collar",
+  "item.collartrinkets.bell_collar": "Leather Collar with Bell",
+  "sound.collartrinkets.collar_bell": "Collar bell jingles"
 }

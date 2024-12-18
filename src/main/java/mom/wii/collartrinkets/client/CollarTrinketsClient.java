@@ -12,8 +12,12 @@ public class CollarTrinketsClient implements ClientModInitializer {
     public void onInitializeClient() {
         CollarTrinkets.LOGGER.info("collar trinkets client");
 
-        AccessoriesRendererRegistry.registerRenderer(CollarTrinketsItems.COLLAR, CollarItem.Renderer::new);
+        AccessoriesRendererRegistry.registerRenderer(CollarTrinketsItems.COLLAR, () -> new CollarItem.Renderer(false));
+        AccessoriesRendererRegistry.registerRenderer(CollarTrinketsItems.COLLAR_WITH_BELL, () -> new CollarItem.Renderer(true));
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> CollarTrinketsItems.COLLAR.getColor(stack), CollarTrinketsItems.COLLAR);
+        ColorProviderRegistry.ITEM.register(
+                (stack, tintIndex) -> tintIndex == 0 ? CollarTrinketsItems.COLLAR.getColor(stack) : 0xFFFFFFFF,
+                CollarTrinketsItems.COLLAR, CollarTrinketsItems.COLLAR_WITH_BELL
+        );
     }
 }

@@ -12,7 +12,9 @@ public class CollarTrinkets implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("collar trinkets common");
+
         CollarTrinketsItems.initialize();
+        CollarTrinketsSounds.initialize();
     }
 
     public static Identifier id(String id) {
