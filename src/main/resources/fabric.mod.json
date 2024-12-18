@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "collartrinkets",
+  "version": "${version}",
+  "name": "Collar Trinkets",
+  "description": "",
+  "authors": [
+    "igalaxy"
+  ],
+  "contact": {
+    "repo": "https://github.com/wiidotmom/collar-trinkets"
+  },
+  "license": "MIT",
+  "icon": "assets/collar-trinkets/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "mom.wii.collartrinkets.client.CollarTrinketsClient"
+    ],
+    "main": [
+      "mom.wii.collartrinkets.CollarTrinkets"
+    ]
+  },
+  "mixins": [
+    "collar-trinkets.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "accessories": "*"
+  }
+}
