@@ -1,6 +1,6 @@
 # 🐾 collar trinkets
 
-colored collar trinkets for players!!
+dyeable collar trinkets for players!!
 
 ## features
 - craftable collars
