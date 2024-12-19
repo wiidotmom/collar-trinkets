@@ -20,5 +20,4 @@ dyeable collar trinkets for players!!
 - https://modrinth.com/mod/styled-nicknames
 - https://modrinth.com/mod/styledplayerlist
 - https://modrinth.com/mod/origins
-- https://modrinth.com/mod/leashable-players
 - theoretically works with Sinytra Connector, although I haven't tested it
