@@ -1,7 +1,9 @@
 package mom.wii.collartrinkets.item;
 
 import com.google.common.base.Suppliers;
+import io.wispforest.accessories.api.AccessoriesAPI;
 import io.wispforest.accessories.api.AccessoryItem;
+import io.wispforest.accessories.api.DropRule;
 import io.wispforest.accessories.api.client.AccessoryRenderer;
 import io.wispforest.accessories.api.slot.SlotReference;
 import mom.wii.collartrinkets.CollarTrinkets;
@@ -20,6 +22,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -29,12 +32,15 @@ import java.util.function.Supplier;
 public class CollarItem extends AccessoryItem implements DyeableItem {
     public boolean hasBell;
 
+    @Override
+    public DropRule getDropRule(ItemStack stack, SlotReference reference, DamageSource source) {
+        return DropRule.KEEP;
+    }
+
     public CollarItem(Settings settings, boolean hasBell) {
         super(settings);
         this.hasBell = hasBell;
     }
-
-
 
     @Environment(EnvType.CLIENT)
     public static class Model extends BipedEntityModel<LivingEntity> {

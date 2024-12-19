@@ -21,7 +21,7 @@ public class CollarTrinkets implements ModInitializer {
 
     public static final TagKey<Item> COLLARS = TagKey.of(RegistryKeys.ITEM, id("collars"));
 
-    public boolean isCollar(ItemStack stack) {
+    public static boolean isCollar(ItemStack stack) {
         return stack.streamTags().collect(Collectors.toUnmodifiableSet()).contains(COLLARS);
     }
 
@@ -37,14 +37,14 @@ public class CollarTrinkets implements ModInitializer {
                 return PlaceholderResult.invalid("Not a living entity!");
             }
             LivingEntity entity = (LivingEntity) ctx.entity();
-            if (entity.accessoriesCapability() == null) {
-                return PlaceholderResult.invalid("No AccessoriesCapability!");
+            if (entity.accessoriesCapability() == null || !entity.accessoriesCapability().isEquipped(CollarTrinkets::isCollar)) {
+                return PlaceholderResult.value(entity.getDisplayName());
             }
-            SlotEntryReference collar = entity.accessoriesCapability().getFirstEquipped(this::isCollar);
+            SlotEntryReference collar = entity.accessoriesCapability().getFirstEquipped(CollarTrinkets::isCollar);
             if (collar.stack().hasCustomName()) {
                 return PlaceholderResult.value(collar.stack().getName());
             } else {
-                return PlaceholderResult.value(entity.getName());
+                return PlaceholderResult.value(entity.getDisplayName());
             }
         });
     }
