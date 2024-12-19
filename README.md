@@ -6,6 +6,7 @@ dyeable collar trinkets for players!!
 - craftable collars
 - wearable in your Accessories necklace slot
 - you can dye them
+- they dont drop on death ever
 - there is a variant with a bell that jingles when you move
 - if you rename them, you can access a player's collar name with the `%collartrinkets:name%` [placeholder](https://placeholders.pb4.eu/), useable with stuff like Styled Player List and Styled Nicknames
 
