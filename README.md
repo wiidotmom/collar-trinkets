@@ -10,6 +10,8 @@ dyeable collar trinkets for players!!
 - there is a variant with a bell that jingles when you move
 - if you rename them, you can access a player's collar name with the `%collartrinkets:name%` [placeholder](https://placeholders.pb4.eu/), useable with stuff like Styled Player List and Styled Nicknames
 
+![image](https://github.com/user-attachments/assets/29c312c9-57f3-4a23-85df-1ba233fcfd7b)
+
 ## dependencies
 - https://modrinth.com/mod/fabric-api
 - https://modrinth.com/mod/accessories
